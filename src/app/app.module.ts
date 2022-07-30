@@ -13,6 +13,7 @@ import { ExperienceComponent } from './component/experience/experience.component
 import { FormationComponent } from './component/formation/formation.component';
 import { SkillsComponent } from './component/skills/skills.component';
 import { ProyectsComponent } from './component/proyects/proyects.component';
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -25,12 +26,13 @@ import { ProyectsComponent } from './component/proyects/proyects.component';
     SkillsComponent,
     ProyectsComponent
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    FormsModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        FormsModule,
+        AppRoutingModule,
+        RouterModule
+    ],
   providers: [LoginService],
   bootstrap: [AppComponent]
 })
