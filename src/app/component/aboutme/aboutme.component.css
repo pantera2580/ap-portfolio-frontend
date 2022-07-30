@@ -1,0 +1,14 @@
+img {
+  border-radius: 50%;
+}
+.bi {
+  font-size: 2rem;
+  margin-right: 1rem;
+  color: #363062;
+}
+.bi:hover{
+  color:white
+}
+h2{
+  font-size: 2rem;
+}

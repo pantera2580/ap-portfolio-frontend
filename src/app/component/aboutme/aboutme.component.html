@@ -1,1 +1,18 @@
-<p>aboutme works!</p>
+<div class="row my-3 ">
+  <div class="col-3 text-white">
+    <img [src]="personResponse.profileImage" alt="profile pic" class="img-fluid">
+    <h2 class="text-center" id="#about"><b>{{personResponse.name}} {{personResponse.lastname}}</b></h2>
+  </div>
+  <div class="col-9 text-white">
+    <h2 >{{personResponse.title}}</h2>
+    <p>{{personResponse.description}}</p>
+    <h2>Contactame</h2>
+    <div>
+      <a href="mailto:{{personResponse.email}}"><i class="bi bi-envelope"></i></a>
+      <a href="tel:{{personResponse.phone}}"><i class="bi bi-telephone"></i></a>
+      <a [href]="personResponse.githubUrl"><i class="bi bi-github"></i></a>
+      <a [href]="personResponse.linkedinUrl"><i class="bi bi-linkedin"></i></a>
+    </div>
+
+  </div>
+</div>

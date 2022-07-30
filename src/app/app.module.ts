@@ -12,7 +12,8 @@ import { AboutmeComponent } from './component/aboutme/aboutme.component';
 import { ExperienceComponent } from './component/experience/experience.component';
 import { FormationComponent } from './component/formation/formation.component';
 import { SkillsComponent } from './component/skills/skills.component';
-import { ProyectsComponent } from './component/proyects/proyects.component';
+import { ProjectsComponent } from './component/projects/projects.component';
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -23,14 +24,15 @@ import { ProyectsComponent } from './component/proyects/proyects.component';
     ExperienceComponent,
     FormationComponent,
     SkillsComponent,
-    ProyectsComponent
+    ProjectsComponent
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    FormsModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        FormsModule,
+        AppRoutingModule,
+        RouterModule
+    ],
   providers: [LoginService],
   bootstrap: [AppComponent]
 })

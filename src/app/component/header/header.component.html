@@ -1,1 +1,48 @@
-<p>header works!</p>
+<nav class="navbar navbar-expand-lg ">
+  <div class="container-fluid">
+    <img src="https://argentinaprograma.inti.gob.ar/pluginfile.php/1/theme_moove/logo/1659143423/APLogo-20-20.png" alt="">
+    <a class="navbar-brand" href="#">Argentina Programa #YoProgramo</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/pantera2580" target="_blank"><i class="bi bi-github" title="Github"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.linkedin.com/in/marianoecruz/" target="_blank"><i class="bi bi-linkedin" title="Linkedin"></i></a>
+        </li>
+        <li class="nav-item" *ngIf="!loginService.isLogin()">
+          <a class="nav-link" routerLink="login" ><i class="bi bi-door-open" title="Iniciar Sesion"></i></a>
+        </li>
+        <li class="nav-item" *ngIf="loginService.isLogin()">
+          <a class="nav-link" routerLink="login" ><i class="bi bi-door-closed-fill" title="Salir" (click)="logout()"></i></a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="text-center">
+  <img src="./assets/wallpaperflare-cropped.jpg" class="img-fluid px-5" alt="business cat">
+</div>
+<div>
+  <ul class="nav nav-pills nav-fill">
+    <li class="nav-item">
+      <a class="nav-link" aria-current="page" routerLink="aboutme" fragment="about" routerLinkActive='active'>Acerca de mi</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" aria-current="page" routerLink="experience" routerLinkActive='active'>Experiencia</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" aria-current="page" routerLink="education" routerLinkActive='active'>Educacion</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" aria-current="page" routerLink="skills" routerLinkActive='active'>Skills</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="proyects">Proyectos</a>
+    </li>
+  </ul>
+</div>

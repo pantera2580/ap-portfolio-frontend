@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {PersonService} from "../../service/person.service";
+import {LoginService} from "../../service/login.service";
+import {PersonResponse} from "../../model/person/person-response";
 
 @Component({
   selector: 'app-aboutme',
@@ -7,9 +10,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutmeComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private _personService:PersonService,
+              private _loginService:LoginService) { }
+  id:string=''
+  personResponse = new PersonResponse()
+  message=''
   ngOnInit(): void {
+    this.getId()
+    this.getPerson()
   }
-
+  getId(){
+    this.id=this._loginService.getIdPersona() ?? ""
+  }
+  getPerson(){
+    this._personService.getPerson(this.id).subscribe({
+      next:result => {
+        this.personResponse = result
+      },
+      error: err => {
+        if(err.statusCode == 404)
+          this.message="Person not found"
+        if (err.statusCode == 403)
+          this.message="Forbidden"
+      }
+    })
+  }
 }
