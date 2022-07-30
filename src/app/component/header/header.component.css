@@ -12,5 +12,10 @@ nav img {
   color: white;
 }
 .bi {
-  font-size: 1.5rem;
+  font-size: 2rem;
+  margin-right: 0.5rem;
+}
+div ul {
+  background-color: #363062;
+  color: white;
 }

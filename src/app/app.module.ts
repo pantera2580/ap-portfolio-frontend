@@ -12,7 +12,7 @@ import { AboutmeComponent } from './component/aboutme/aboutme.component';
 import { ExperienceComponent } from './component/experience/experience.component';
 import { FormationComponent } from './component/formation/formation.component';
 import { SkillsComponent } from './component/skills/skills.component';
-import { ProyectsComponent } from './component/proyects/proyects.component';
+import { ProjectsComponent } from './component/projects/projects.component';
 import {RouterModule} from "@angular/router";
 
 @NgModule({
@@ -24,7 +24,7 @@ import {RouterModule} from "@angular/router";
     ExperienceComponent,
     FormationComponent,
     SkillsComponent,
-    ProyectsComponent
+    ProjectsComponent
   ],
     imports: [
         BrowserModule,

@@ -13,8 +13,11 @@
         <li class="nav-item">
           <a class="nav-link" href="https://www.linkedin.com/in/marianoecruz/" target="_blank"><i class="bi bi-linkedin" title="Linkedin"></i></a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="!loginService.isLogin()">
           <a class="nav-link" routerLink="login" ><i class="bi bi-door-open" title="Iniciar Sesion"></i></a>
+        </li>
+        <li class="nav-item" *ngIf="loginService.isLogin()">
+          <a class="nav-link" routerLink="login" ><i class="bi bi-door-closed-fill" title="Salir" (click)="logout()"></i></a>
         </li>
 
       </ul>
@@ -23,4 +26,23 @@
 </nav>
 <div class="text-center">
   <img src="./assets/wallpaperflare-cropped.jpg" class="img-fluid px-5" alt="business cat">
+</div>
+<div>
+  <ul class="nav nav-pills nav-fill">
+    <li class="nav-item">
+      <a class="nav-link" aria-current="page" routerLink="aboutme" fragment="about" routerLinkActive='active'>Acerca de mi</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" aria-current="page" routerLink="experience" routerLinkActive='active'>Experiencia</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" aria-current="page" routerLink="education" routerLinkActive='active'>Educacion</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" aria-current="page" routerLink="skills" routerLinkActive='active'>Skills</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="proyects">Proyectos</a>
+    </li>
+  </ul>
 </div>

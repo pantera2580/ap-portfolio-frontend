@@ -10,14 +10,14 @@ import {LoginResponse} from "../../model/login/login-response";
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private loginService:LoginService) { }
+  constructor(private _loginService:LoginService) { }
   loginRequest= new LoginRequest;
   loginResponse!:LoginResponse;
   message=""
   ngOnInit(): void {
   }
   login(){
-    this.loginService.login(this.loginRequest).subscribe({
+    this._loginService.login(this.loginRequest).subscribe({
       next:result => {
         this.loginResponse=result;
         sessionStorage.setItem("token", this.loginResponse.token)
