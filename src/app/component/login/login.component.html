@@ -1,0 +1,12 @@
+<div class="mx-auto my-2">
+  <h1 class="text-center">LOGIN</h1>
+  <form action="" >
+    <label class="form-label">Username</label>
+    <input class="form-control" type="text" name="loginRequest.username" [(ngModel)]="loginRequest.username">
+    <label class="form-label">Password</label>
+    <input class="form-control" type="password" name="loginRequest.password" [(ngModel)]="loginRequest.password">
+    <div class="d-grid gap-2 mx-auto">
+    <button class="btn btn-primary my-3" (click)="login()">Iniciar Sesión</button>
+    </div>
+  </form>
+</div>
