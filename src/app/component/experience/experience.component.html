@@ -1,1 +1,14 @@
-<p>experience works!</p>
+<div class="box-center mx-auto">
+  <div class="card my-3" *ngFor="let exp of this.experienceResponseList">
+    <div class="card-header">
+      <b>{{exp.job}}</b>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{exp.company}}</h5>
+      <p class="card-text">{{exp.description}}</p>
+    </div>
+    <div class="card-footer text-muted">
+      Inicio: {{exp.initialDate}} - Finalizacion: {{exp.finishDate}}
+    </div>
+  </div>
+</div>
