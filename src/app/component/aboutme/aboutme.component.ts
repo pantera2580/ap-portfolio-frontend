@@ -12,7 +12,7 @@ export class AboutmeComponent implements OnInit {
 
   constructor(private _personService:PersonService,
               private _loginService:LoginService) { }
-  id:string=''
+  id!:string
   personResponse = new PersonResponse()
   message=''
   ngOnInit(): void {
@@ -20,7 +20,7 @@ export class AboutmeComponent implements OnInit {
     this.getPerson()
   }
   getId(){
-    this.id=this._loginService.getIdPersona() ?? ""
+    this.id=this._loginService.getIdPersona() ?? "840ab640-7c25-4c86-b275-f1846eb0059e"
   }
   getPerson(){
     this._personService.getPerson(this.id).subscribe({

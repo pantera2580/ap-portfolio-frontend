@@ -1,17 +1,17 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {ExperienceRequest} from "../model/experience/experience-request";
+import {FormationRequest} from "../model/formation/formation-request";
 
 @Injectable({
   providedIn: 'root'
 })
-export class ExperienceService {
+export class FormationService {
 
   constructor(private _http:HttpClient) { }
-  urlBase = 'http://localhost:8080/v1/experience'
+  urlBase = 'http://localhost:8080/v1/academic'
 
-  public getExperience(idPerson:string):Observable<any>{
+  public getFormation(idPerson:string):Observable<any>{
     const url = this.urlBase + '/public/' + idPerson
     const httpOptions = {
       headers: new HttpHeaders({
@@ -21,7 +21,7 @@ export class ExperienceService {
     };
     return this._http.get(url, httpOptions)
   }
-  public saveExperience(experienceRequest:ExperienceRequest):Observable<any>{
+  public saveFormation(formationRequest:FormationRequest):Observable<any>{
     const url = this.urlBase +'/'
     const httpOptions = {
       headers: new HttpHeaders({
@@ -29,11 +29,11 @@ export class ExperienceService {
         "Authorization": sessionStorage.getItem("token")??""
       })
     };
-    const body = JSON.stringify(experienceRequest)
+    const body = JSON.stringify(formationRequest)
     return this._http.post(url, body, httpOptions)
   }
-  public deleteExperience(idExperience:string):Observable<any>{
-    const url = this.urlBase +'/'+ idExperience
+  public deleteFormation(idFormation:string):Observable<any>{
+    const url = this.urlBase +'/'+ idFormation
     const httpOptions = {
       headers: new HttpHeaders({
         "Access-Control-Allow-Origin": "*",

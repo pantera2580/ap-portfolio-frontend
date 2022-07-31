@@ -1,7 +1,48 @@
 <div class="box-center mx-auto">
+  <div class="box-color px-3 py-3 my-2" *ngIf="loginService.isLogin()">
+    <h2>Nueva Experiencia Laboral</h2>
+    <form action="">
+      <div class="row">
+        <div class="col-6">
+          <div>
+            <label class="form-label">Empresa</label>
+            <input class="form-control" type="text" name="experienceRequest.company" [(ngModel)]="experienceRequest.company">
+          </div>
+          <div>
+            <label class="form-label">Puesto</label>
+            <input class="form-control" type="text" name="experienceRequest.job" [(ngModel)]="experienceRequest.job">
+          </div>
+        </div>
+        <div class="col-6">
+          <div>
+            <label class="form-label">Fecha de inicio</label>
+            <input class="form-control" type="date" name="experienceRequest.initialDate" [(ngModel)]="experienceRequest.initialDate">
+          </div>
+          <div>
+            <label class="form-label">Fecha de finalizacion</label>
+            <input class="form-control" type="date" name="experienceRequest.finishDate" [(ngModel)]="experienceRequest.finishDate">
+          </div>
+        </div>
+        <div class="col-12">
+          <div>
+            <label class="form-label">Descripcion del puesto</label>
+            <input class="form-control" type="text" name="experienceRequest.description" [(ngModel)]="experienceRequest.description">
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <button class="btn btn-color my-3" (click)="save()">Agregar</button>
+      </div>
+    </form>
+  </div>
   <div class="card my-3" *ngFor="let exp of this.experienceResponseList">
-    <div class="card-header">
+    <div class="card-header d-flex justify-content-between">
       <b>{{exp.job}}</b>
+      <span class="ms-auto" *ngIf="loginService.isLogin()">
+        <button class="btn btn-actions"><i class="bi bi-trash" title="eliminar" (click)="delete(exp.id)"></i></button>
+        <button class="btn btn-actions"><i class="bi bi-pencil" title="editar" (click)="update()"></i></button>
+      </span>
+
     </div>
     <div class="card-body">
       <h5 class="card-title">{{exp.company}}</h5>

@@ -10,3 +10,18 @@
   border: none;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+.box-color{
+  background-color: #4D4C7D;
+  border-radius: 5px;
+  color: #ffffff;
+}
+.btn-color{
+  width: 10rem;
+}
+.btn-color, .btn-actions {
+  background-color: #E9D5DA;
+}
+
+.btn-color:hover, .btn-actions{
+  background-color: #363062;
+}

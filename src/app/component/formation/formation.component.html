@@ -1,1 +1,15 @@
-<p>formation works!</p>
+<div class="box-center mx-auto">
+  <div class="card my-3" *ngFor="let format of this.formationResponseList">
+    <div class="card-header">
+      <b>{{format.title}}</b>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{format.organization}}</h5>
+      <p class="card-text">{{format.description}}</p>
+    </div>
+    <div class="card-footer text-muted">
+      Inicio: {{format.initialDate}} - Finalizacion: {{format.finishDate}}
+    </div>
+  </div>
+</div>
+

@@ -1,17 +1,16 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {ExperienceRequest} from "../model/experience/experience-request";
+import {ProjectRequest} from "../model/project/project-request";
 
 @Injectable({
   providedIn: 'root'
 })
-export class ExperienceService {
-
+export class ProjectService {
   constructor(private _http:HttpClient) { }
-  urlBase = 'http://localhost:8080/v1/experience'
+  urlBase = 'http://localhost:8080/v1/academic'
 
-  public getExperience(idPerson:string):Observable<any>{
+  public getProject(idPerson:string):Observable<any>{
     const url = this.urlBase + '/public/' + idPerson
     const httpOptions = {
       headers: new HttpHeaders({
@@ -21,7 +20,7 @@ export class ExperienceService {
     };
     return this._http.get(url, httpOptions)
   }
-  public saveExperience(experienceRequest:ExperienceRequest):Observable<any>{
+  public saveProject(projectRequest:ProjectRequest):Observable<any>{
     const url = this.urlBase +'/'
     const httpOptions = {
       headers: new HttpHeaders({
@@ -29,11 +28,11 @@ export class ExperienceService {
         "Authorization": sessionStorage.getItem("token")??""
       })
     };
-    const body = JSON.stringify(experienceRequest)
+    const body = JSON.stringify(projectRequest)
     return this._http.post(url, body, httpOptions)
   }
-  public deleteExperience(idExperience:string):Observable<any>{
-    const url = this.urlBase +'/'+ idExperience
+  public deleteProject(idProject:string):Observable<any>{
+    const url = this.urlBase +'/'+ idProject
     const httpOptions = {
       headers: new HttpHeaders({
         "Access-Control-Allow-Origin": "*",
